@@ -1,0 +1,6 @@
+=== 022_02_select_basics_04.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.sales
+columns:
+  [ 0] channel :: string | IDENTITY   | sources=[spark_catalog.default.sales.channel] | expr=spark_catalog.default.sales.channel

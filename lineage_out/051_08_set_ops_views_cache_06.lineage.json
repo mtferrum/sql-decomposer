@@ -1,0 +1,52 @@
+{
+  "file": "051_08_set_ops_views_cache_06.json",
+  "lineage": {
+    "plan_kind": "DDL",
+    "operation": "CreateViewCommand",
+    "target_table": {
+      "catalog": null,
+      "database": null,
+      "table": "v_sales_total",
+      "fqn": "v_sales_total"
+    },
+    "source_tables": [
+      "spark_catalog.default.sales"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_id",
+        "data_type": "integer",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.emp_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.sales.emp_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "total_amount",
+        "data_type": "",
+        "transformation_type": "AGGREGATE",
+        "expression": "SUM(spark_catalog.default.sales.amount)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "amount",
+            "fqn": "spark_catalog.default.sales.amount"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

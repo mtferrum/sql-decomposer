@@ -1,0 +1,19 @@
+{
+  "file": "066_10_cleanup_06.json",
+  "lineage": {
+    "plan_kind": "DDL",
+    "operation": "DropTable",
+    "target_table": {
+      "catalog": null,
+      "database": null,
+      "table": "",
+      "fqn": ""
+    },
+    "source_tables": [],
+    "columns": [],
+    "ctes": {},
+    "notes": [
+      "No data flow"
+    ]
+  }
+}

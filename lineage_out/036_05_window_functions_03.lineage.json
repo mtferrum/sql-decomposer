@@ -1,0 +1,123 @@
+{
+  "file": "036_05_window_functions_03.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.sales"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_id",
+        "data_type": "integer",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.emp_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.sales.emp_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "sale_ts",
+        "data_type": "timestamp",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.sale_ts",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "amount",
+        "data_type": "decimal(12,2)",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.amount",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "amount",
+            "fqn": "spark_catalog.default.sales.amount"
+          }
+        ]
+      },
+      {
+        "ordinal": 3,
+        "name": "prev_amount",
+        "data_type": "decimal(12,2)",
+        "transformation_type": "WINDOW",
+        "expression": "LAG(spark_catalog.default.sales.amount, 1, CAST(0.00BD AS decimal(12,2))) OVER (PARTITION BY spark_catalog.default.sales.emp_id ORDER BY spark_catalog.default.sales.sale_ts ASC NULLS FIRST ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "amount",
+            "fqn": "spark_catalog.default.sales.amount"
+          },
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.sales.emp_id"
+          },
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      },
+      {
+        "ordinal": 4,
+        "name": "next_amount",
+        "data_type": "decimal(12,2)",
+        "transformation_type": "WINDOW",
+        "expression": "LEAD(spark_catalog.default.sales.amount, 1, CAST(0.00BD AS decimal(12,2))) OVER (PARTITION BY spark_catalog.default.sales.emp_id ORDER BY spark_catalog.default.sales.sale_ts ASC NULLS FIRST ROWS BETWEEN 1 FOLLOWING AND 1 FOLLOWING)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "amount",
+            "fqn": "spark_catalog.default.sales.amount"
+          },
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.sales.emp_id"
+          },
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

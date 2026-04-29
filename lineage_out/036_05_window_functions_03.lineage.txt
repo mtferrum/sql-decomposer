@@ -1,0 +1,10 @@
+=== 036_05_window_functions_03.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.sales
+columns:
+  [ 0] emp_id :: integer | IDENTITY   | sources=[spark_catalog.default.sales.emp_id] | expr=spark_catalog.default.sales.emp_id
+  [ 1] sale_ts :: timestamp | IDENTITY   | sources=[spark_catalog.default.sales.sale_ts] | expr=spark_catalog.default.sales.sale_ts
+  [ 2] amount :: decimal(12,2) | IDENTITY   | sources=[spark_catalog.default.sales.amount] | expr=spark_catalog.default.sales.amount
+  [ 3] prev_amount :: decimal(12,2) | WINDOW     | sources=[spark_catalog.default.sales.amount, spark_catalog.default.sales.emp_id, spark_catalog.default.sales.sale_ts] | expr=LAG(spark_catalog.default.sales.amount, 1, CAST(0.00BD AS decimal(12,2))) OVER (PARTITION BY spark_catalog.default.sales.emp_id ORDER BY spark_catalog.default.sales.sale_ts ASC NULLS FIRST ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING)
+  [ 4] next_amount :: decimal(12,2) | WINDOW     | sources=[spark_catalog.default.sales.amount, spark_catalog.default.sales.emp_id, spark_catalog.default.sales.sale_ts] | expr=LEAD(spark_catalog.default.sales.amount, 1, CAST(0.00BD AS decimal(12,2))) OVER (PARTITION BY spark_catalog.default.sales.emp_id ORDER BY spark_catalog.default.sales.sale_ts ASC NULLS FIRST ROWS BETWEEN 1 FOLLOWING AND 1 FOLLOWING)

@@ -1,0 +1,7 @@
+=== 039_06_complex_types_and_json_03.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.nested_data
+columns:
+  [ 0] id :: integer | IDENTITY   | sources=[spark_catalog.default.nested_data.id] | expr=spark_catalog.default.nested_data.id
+  [ 1] tag :: string | GENERATOR  | sources=[spark_catalog.default.nested_data.tags] | expr=EXPLODE(spark_catalog.default.nested_data.tags).tag

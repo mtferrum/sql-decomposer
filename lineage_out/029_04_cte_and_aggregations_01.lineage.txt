@@ -1,0 +1,5 @@
+=== 029_04_cte_and_aggregations_01.json ===
+plan_kind = NAMESPACE
+operation = SetCatalogAndNamespace
+note      = Set namespace: .test_sql_db
+columns: <none>

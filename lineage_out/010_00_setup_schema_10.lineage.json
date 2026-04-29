@@ -1,0 +1,60 @@
+{
+  "file": "010_00_setup_schema_10.json",
+  "lineage": {
+    "plan_kind": "DDL",
+    "operation": "CreateDataSourceTableCommand",
+    "target_table": {
+      "catalog": "spark_catalog",
+      "database": "default",
+      "table": "sales",
+      "fqn": "spark_catalog.default.sales"
+    },
+    "source_tables": [],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "sale_id",
+        "data_type": "long",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 1,
+        "name": "emp_id",
+        "data_type": "integer",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 2,
+        "name": "sale_ts",
+        "data_type": "timestamp",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 3,
+        "name": "amount",
+        "data_type": "decimal(12,2)",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 4,
+        "name": "channel",
+        "data_type": "string",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      }
+    ],
+    "ctes": {},
+    "notes": [
+      "Schema-only definition; no data flow"
+    ]
+  }
+}

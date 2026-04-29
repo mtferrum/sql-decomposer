@@ -1,0 +1,6 @@
+=== 063_10_cleanup_03.json ===
+plan_kind = DDL
+operation = DropTableCommand
+target    = spark_catalog.default.v_sales_total
+note      = No data flow
+columns: <none>

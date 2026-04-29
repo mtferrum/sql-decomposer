@@ -1,0 +1,6 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#10b981"><FONT COLOR="white"><B>LITERAL</B></FONT></TD><TD ALIGN="LEFT" PORT="dept_id"><B>dept_id</B> <FONT COLOR="#6b7280">::integer</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">&lt;schema definition&gt;</FONT></TD></TR><TR><TD BGCOLOR="#10b981"><FONT COLOR="white"><B>LITERAL</B></FONT></TD><TD ALIGN="LEFT" PORT="dept_name"><B>dept_name</B> <FONT COLOR="#6b7280">::string</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">&lt;schema definition&gt;</FONT></TD></TR><TR><TD BGCOLOR="#10b981"><FONT COLOR="white"><B>LITERAL</B></FONT></TD><TD ALIGN="LEFT" PORT="region"><B>region</B> <FONT COLOR="#6b7280">::string</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">&lt;schema definition&gt;</FONT></TD></TR></TABLE>>];
+}

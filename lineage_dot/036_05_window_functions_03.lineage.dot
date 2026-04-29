@@ -1,0 +1,16 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "src_spark_catalog.default.sales" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD BGCOLOR="#1f2937"><FONT COLOR="white"><B>spark_catalog.default.sales</B></FONT></TD></TR><TR><TD ALIGN="LEFT" PORT="amount">amount</TD></TR><TR><TD ALIGN="LEFT" PORT="emp_id">emp_id</TD></TR><TR><TD ALIGN="LEFT" PORT="sale_ts">sale_ts</TD></TR></TABLE>>];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="emp_id"><B>emp_id</B> <FONT COLOR="#6b7280">::integer</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.sales.emp_id</FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="sale_ts"><B>sale_ts</B> <FONT COLOR="#6b7280">::timestamp</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.sales.sale_ts</FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="amount"><B>amount</B> <FONT COLOR="#6b7280">::decimal(12,2)</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.sales.amount</FONT></TD></TR><TR><TD BGCOLOR="#7c3aed"><FONT COLOR="white"><B>WINDOW</B></FONT></TD><TD ALIGN="LEFT" PORT="prev_amount"><B>prev_amount</B> <FONT COLOR="#6b7280">::decimal(12,2)</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">LAG(spark_catalog.default.sales.amount, 1, CAST(0.00BD AS d…</FONT></TD></TR><TR><TD BGCOLOR="#7c3aed"><FONT COLOR="white"><B>WINDOW</B></FONT></TD><TD ALIGN="LEFT" PORT="next_amount"><B>next_amount</B> <FONT COLOR="#6b7280">::decimal(12,2)</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">LEAD(spark_catalog.default.sales.amount, 1, CAST(0.00BD AS …</FONT></TD></TR></TABLE>>];
+  "src_spark_catalog.default.sales":emp_id:e -> "output":emp_id:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.sales":sale_ts:e -> "output":sale_ts:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.sales":amount:e -> "output":amount:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.sales":amount:e -> "output":prev_amount:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":emp_id:e -> "output":prev_amount:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":sale_ts:e -> "output":prev_amount:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":amount:e -> "output":next_amount:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":emp_id:e -> "output":next_amount:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":sale_ts:e -> "output":next_amount:w [color="#7c3aed", penwidth=1.2];
+}

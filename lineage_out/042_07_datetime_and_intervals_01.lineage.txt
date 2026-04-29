@@ -1,0 +1,5 @@
+=== 042_07_datetime_and_intervals_01.json ===
+plan_kind = NAMESPACE
+operation = SetCatalogAndNamespace
+note      = Set namespace: .test_sql_db
+columns: <none>

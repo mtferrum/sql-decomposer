@@ -1,0 +1,7 @@
+=== 025_03_joins_and_subqueries_03.json ===
+plan_kind = QUERY
+operation = Project
+sources   = spark_catalog.default.departments, spark_catalog.default.employees
+columns:
+  [ 0] emp_name :: string | IDENTITY   | sources=[spark_catalog.default.employees.emp_name] | expr=spark_catalog.default.employees.emp_name
+  [ 1] dept_name :: string | IDENTITY   | sources=[spark_catalog.default.departments.dept_name] | expr=spark_catalog.default.departments.dept_name

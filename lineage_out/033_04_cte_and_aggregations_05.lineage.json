@@ -1,0 +1,55 @@
+{
+  "file": "033_04_cte_and_aggregations_05.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.employees"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "dept_id",
+        "data_type": "integer",
+        "transformation_type": "GROUPING",
+        "expression": "spark_catalog.default.employees.dept_id | NULL",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "dept_id",
+            "fqn": "spark_catalog.default.employees.dept_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "active",
+        "data_type": "boolean",
+        "transformation_type": "GROUPING",
+        "expression": "spark_catalog.default.employees.active | NULL",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "active",
+            "fqn": "spark_catalog.default.employees.active"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "cnt",
+        "data_type": "",
+        "transformation_type": "AGGREGATE",
+        "expression": "COUNT(*)",
+        "sources": []
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

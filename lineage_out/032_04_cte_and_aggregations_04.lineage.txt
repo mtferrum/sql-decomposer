@@ -1,0 +1,8 @@
+=== 032_04_cte_and_aggregations_04.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.employees
+columns:
+  [ 0] dept_id :: integer | GROUPING   | sources=[spark_catalog.default.employees.dept_id] | expr=spark_catalog.default.employees.dept_id | NULL
+  [ 1] active :: boolean | GROUPING   | sources=[spark_catalog.default.employees.active] | expr=spark_catalog.default.employees.active | NULL
+  [ 2] cnt ::  | AGGREGATE  | sources=[-] | expr=COUNT(*)

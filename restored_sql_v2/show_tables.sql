@@ -1,0 +1,2 @@
+SELECT *
+FROM /* unsupported: ShowTables */;

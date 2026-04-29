@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "catalyst-column-lineage"
+version = "0.1.0"
+description = "Column-level data lineage and SVG/DOT/HTML visualisation from Apache Spark Catalyst LogicalPlan JSON dumps."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "mt" },
+]
+maintainers = [
+  { name = "mt" },
+]
+keywords = [
+  "spark",
+  "pyspark",
+  "sparksql",
+  "catalyst",
+  "logical-plan",
+  "logicalplan",
+  "lineage",
+  "column-lineage",
+  "data-lineage",
+  "visualization",
+  "svg",
+  "graphviz",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Database",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Scientific/Engineering :: Visualization",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.0",
+  "twine>=4.0",
+]
+
+[project.urls]
+Homepage      = "https://pypi.org/project/catalyst-column-lineage/"
+Documentation = "https://pypi.org/project/catalyst-column-lineage/"
+Source        = "https://pypi.org/project/catalyst-column-lineage/"
+Issues        = "https://pypi.org/project/catalyst-column-lineage/"
+
+[project.scripts]
+catalyst-column-lineage = "spark_lineage.__main__:main"
+spark-lineage           = "spark_lineage.__main__:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["spark_lineage*"]
+
+[tool.setuptools.package-data]
+"spark_lineage" = ["py.typed"]

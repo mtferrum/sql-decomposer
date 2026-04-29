@@ -1,0 +1,5 @@
+=== 058_09_ansi_and_error_cases_03.json ===
+plan_kind = QUERY
+operation = Project
+columns:
+  [ 0] should_fail_cast :: integer | LITERAL    | sources=[-] | expr=CAST('abc' AS integer)

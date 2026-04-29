@@ -1,0 +1,64 @@
+{
+  "file": "024_03_joins_and_subqueries_02.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Project",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.departments",
+      "spark_catalog.default.employees"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_name",
+        "data_type": "string",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.emp_name",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "emp_name",
+            "fqn": "spark_catalog.default.employees.emp_name"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "dept_name",
+        "data_type": "string",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.departments.dept_name",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "departments",
+            "column": "dept_name",
+            "fqn": "spark_catalog.default.departments.dept_name"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "salary",
+        "data_type": "decimal(12,2)",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.salary",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "salary",
+            "fqn": "spark_catalog.default.employees.salary"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

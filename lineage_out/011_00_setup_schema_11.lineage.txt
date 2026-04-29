@@ -1,0 +1,9 @@
+=== 011_00_setup_schema_11.json ===
+plan_kind = DDL
+operation = CreateDataSourceTableCommand
+target    = spark_catalog.default.events
+note      = Schema-only definition; no data flow
+columns:
+  [ 0] event_id :: long | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 1] payload :: string | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 2] event_date :: date | LITERAL    | sources=[-] | expr=<schema definition>

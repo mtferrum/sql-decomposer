@@ -1,0 +1,5 @@
+=== 002_00_setup_schema_02.json ===
+plan_kind = NAMESPACE
+operation = SetCatalogAndNamespace
+note      = Set namespace: .test_sql_db
+columns: <none>

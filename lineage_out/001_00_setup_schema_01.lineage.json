@@ -1,0 +1,12 @@
+{
+  "file": "001_00_setup_schema_01.json",
+  "lineage": {
+    "plan_kind": "NAMESPACE",
+    "operation": "CreateNamespace",
+    "target_table": null,
+    "source_tables": [],
+    "columns": [],
+    "ctes": {},
+    "notes": []
+  }
+}

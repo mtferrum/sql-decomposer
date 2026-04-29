@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spark-plan-to-sql"
+version = "0.1.0"
+description = "Convert Apache Spark Catalyst LogicalPlan JSON back into a logically equivalent SQL statement."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "mt" }
+]
+keywords = [
+  "spark",
+  "sql",
+  "catalyst",
+  "logical-plan",
+  "logicalplan",
+  "json",
+  "decompiler",
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Database",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/spark-plan-to-sql/"
+
+[project.scripts]
+spark-plan-to-sql = "spark_plan_to_sql.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

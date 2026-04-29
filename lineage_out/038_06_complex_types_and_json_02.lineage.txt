@@ -1,0 +1,10 @@
+=== 038_06_complex_types_and_json_02.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.nested_data
+columns:
+  [ 0] id :: integer | IDENTITY   | sources=[spark_catalog.default.nested_data.id] | expr=spark_catalog.default.nested_data.id
+  [ 1] first_tag ::  | EXPRESSION | sources=[spark_catalog.default.nested_data.tags] | expr=spark_catalog.default.nested_data.tags[0]
+  [ 2] tier ::  | EXPRESSION | sources=[spark_catalog.default.nested_data.attrs] | expr=spark_catalog.default.nested_data.attrs['tier']
+  [ 3] country ::  | EXPRESSION | sources=[spark_catalog.default.nested_data.profile] | expr=spark_catalog.default.nested_data.profile.country
+  [ 4] city ::  | EXPRESSION | sources=[spark_catalog.default.nested_data.profile] | expr=spark_catalog.default.nested_data.profile.city

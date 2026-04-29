@@ -1,0 +1,127 @@
+{
+  "file": "044_07_datetime_and_intervals_03.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.sales"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "sale_id",
+        "data_type": "long",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.sale_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_id",
+            "fqn": "spark_catalog.default.sales.sale_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "sale_ts",
+        "data_type": "timestamp",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.sale_ts",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "sale_day",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "DATE_TRUNC('DAY', spark_catalog.default.sales.sale_ts)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      },
+      {
+        "ordinal": 3,
+        "name": "sale_date",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "TO_DATE(spark_catalog.default.sales.sale_ts)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      },
+      {
+        "ordinal": 4,
+        "name": "y",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "YEAR(CAST(spark_catalog.default.sales.sale_ts AS date))",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      },
+      {
+        "ordinal": 5,
+        "name": "m",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "MONTH(CAST(spark_catalog.default.sales.sale_ts AS date))",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      },
+      {
+        "ordinal": 6,
+        "name": "d",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "DAY(CAST(spark_catalog.default.sales.sale_ts AS date))",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

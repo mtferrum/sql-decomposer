@@ -1,0 +1,6 @@
+=== 028_03_joins_and_subqueries_06.json ===
+plan_kind = QUERY
+operation = Aggregate
+sources   = spark_catalog.default.employees
+columns:
+  [ 0] avg(salary) ::  | AGGREGATE  | sources=[spark_catalog.default.employees.salary] | expr=AVG(e2.salary)

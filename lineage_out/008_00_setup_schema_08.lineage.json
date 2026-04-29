@@ -1,0 +1,68 @@
+{
+  "file": "008_00_setup_schema_08.json",
+  "lineage": {
+    "plan_kind": "DDL",
+    "operation": "CreateDataSourceTableCommand",
+    "target_table": {
+      "catalog": "spark_catalog",
+      "database": "default",
+      "table": "employees",
+      "fqn": "spark_catalog.default.employees"
+    },
+    "source_tables": [],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_id",
+        "data_type": "integer",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 1,
+        "name": "emp_name",
+        "data_type": "string",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 2,
+        "name": "dept_id",
+        "data_type": "integer",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 3,
+        "name": "salary",
+        "data_type": "decimal(12,2)",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 4,
+        "name": "hire_date",
+        "data_type": "date",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 5,
+        "name": "active",
+        "data_type": "boolean",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      }
+    ],
+    "ctes": {},
+    "notes": [
+      "Schema-only definition; no data flow"
+    ]
+  }
+}

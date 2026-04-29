@@ -1,0 +1,21 @@
+{
+  "file": "058_09_ansi_and_error_cases_03.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Project",
+    "target_table": null,
+    "source_tables": [],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "should_fail_cast",
+        "data_type": "integer",
+        "transformation_type": "LITERAL",
+        "expression": "CAST('abc' AS integer)",
+        "sources": []
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

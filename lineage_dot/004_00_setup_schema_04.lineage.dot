@@ -1,0 +1,6 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR></TABLE>>];
+}

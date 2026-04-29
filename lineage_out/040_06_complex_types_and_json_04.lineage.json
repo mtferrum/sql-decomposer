@@ -1,0 +1,79 @@
+{
+  "file": "040_06_complex_types_and_json_04.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.events"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "event_id",
+        "data_type": "long",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.events.event_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "events",
+            "column": "event_id",
+            "fqn": "spark_catalog.default.events.event_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "event_type",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "GET_JSON_OBJECT(spark_catalog.default.events.payload, '$.type')",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "events",
+            "column": "payload",
+            "fqn": "spark_catalog.default.events.payload"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "source",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "GET_JSON_OBJECT(spark_catalog.default.events.payload, '$.source')",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "events",
+            "column": "payload",
+            "fqn": "spark_catalog.default.events.payload"
+          }
+        ]
+      },
+      {
+        "ordinal": 3,
+        "name": "value_int",
+        "data_type": "integer",
+        "transformation_type": "EXPRESSION",
+        "expression": "CAST(GET_JSON_OBJECT(spark_catalog.default.events.payload, '$.value') AS integer)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "events",
+            "column": "payload",
+            "fqn": "spark_catalog.default.events.payload"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

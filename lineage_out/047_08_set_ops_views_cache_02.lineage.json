@@ -1,0 +1,39 @@
+{
+  "file": "047_08_set_ops_views_cache_02.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Distinct",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.employees",
+      "spark_catalog.default.sales"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_id",
+        "data_type": "integer",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.emp_id | spark_catalog.default.sales.emp_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.employees.emp_id"
+          },
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.sales.emp_id"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

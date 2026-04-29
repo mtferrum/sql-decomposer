@@ -1,0 +1,5 @@
+=== 023_03_joins_and_subqueries_01.json ===
+plan_kind = NAMESPACE
+operation = SetCatalogAndNamespace
+note      = Set namespace: .test_sql_db
+columns: <none>

@@ -1,0 +1,14 @@
+{
+  "file": "046_08_set_ops_views_cache_01.json",
+  "lineage": {
+    "plan_kind": "NAMESPACE",
+    "operation": "SetCatalogAndNamespace",
+    "target_table": null,
+    "source_tables": [],
+    "columns": [],
+    "ctes": {},
+    "notes": [
+      "Set namespace: .test_sql_db"
+    ]
+  }
+}

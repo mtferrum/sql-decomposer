@@ -1,0 +1,6 @@
+=== 048_08_set_ops_views_cache_03.json ===
+plan_kind = QUERY
+operation = Intersect
+sources   = spark_catalog.default.employees, spark_catalog.default.sales
+columns:
+  [ 0] emp_id :: integer | IDENTITY   | sources=[spark_catalog.default.employees.emp_id, spark_catalog.default.sales.emp_id] | expr=spark_catalog.default.employees.emp_id | spark_catalog.default.sales.emp_id

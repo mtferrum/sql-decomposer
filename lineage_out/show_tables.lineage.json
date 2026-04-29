@@ -1,0 +1,14 @@
+{
+  "file": "show_tables.json",
+  "lineage": {
+    "plan_kind": "DDL",
+    "operation": "ShowTables",
+    "target_table": null,
+    "source_tables": [],
+    "columns": [],
+    "ctes": {},
+    "notes": [
+      "Catalog metadata operation; no data flow"
+    ]
+  }
+}

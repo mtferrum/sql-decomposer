@@ -1,0 +1,11 @@
+=== 010_00_setup_schema_10.json ===
+plan_kind = DDL
+operation = CreateDataSourceTableCommand
+target    = spark_catalog.default.sales
+note      = Schema-only definition; no data flow
+columns:
+  [ 0] sale_id :: long | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 1] emp_id :: integer | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 2] sale_ts :: timestamp | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 3] amount :: decimal(12,2) | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 4] channel :: string | LITERAL    | sources=[-] | expr=<schema definition>

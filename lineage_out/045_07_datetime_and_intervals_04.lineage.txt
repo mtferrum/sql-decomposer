@@ -1,0 +1,7 @@
+=== 045_07_datetime_and_intervals_04.json ===
+plan_kind = QUERY
+operation = Project
+columns:
+  [ 0] plus_2h :: timestamp | EXPRESSION | sources=[-] | expr=CAST(+(TIMESTAMP '2024-01-01 10:00:00', INTERVAL '7200000000') AS timestamp)
+  [ 1] minus_30m :: timestamp | EXPRESSION | sources=[-] | expr=CAST(-(+(TIMESTAMP '2024-01-01 10:00:00', (-INTERVAL '1800000000'))) AS timestamp)
+  [ 2] plus_7d ::  | EXPRESSION | sources=[-] | expr=DATE_ADD(DATE '2024-01-01', EXTRACT_DAYS(INTERVAL '604800000000'))

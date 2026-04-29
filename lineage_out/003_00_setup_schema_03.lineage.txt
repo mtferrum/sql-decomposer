@@ -1,0 +1,6 @@
+=== 003_00_setup_schema_03.json ===
+plan_kind = DDL
+operation = DropTable
+target    = 
+note      = No data flow
+columns: <none>

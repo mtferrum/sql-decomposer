@@ -1,0 +1,95 @@
+{
+  "file": "043_07_datetime_and_intervals_02.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.employees"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_id",
+        "data_type": "integer",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.emp_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.employees.emp_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "hire_date",
+        "data_type": "date",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.hire_date",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "hire_date",
+            "fqn": "spark_catalog.default.employees.hire_date"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "plus_6_months",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "ADD_MONTHS(spark_catalog.default.employees.hire_date, 6)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "hire_date",
+            "fqn": "spark_catalog.default.employees.hire_date"
+          }
+        ]
+      },
+      {
+        "ordinal": 3,
+        "name": "plus_10_days",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "DATE_ADD(spark_catalog.default.employees.hire_date, 10)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "hire_date",
+            "fqn": "spark_catalog.default.employees.hire_date"
+          }
+        ]
+      },
+      {
+        "ordinal": 4,
+        "name": "months_worked",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "MONTHS_BETWEEN(CAST(CURRENT_DATE() AS timestamp), CAST(spark_catalog.default.employees.hire_date AS timestamp), TRUE)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "hire_date",
+            "fqn": "spark_catalog.default.employees.hire_date"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

@@ -1,0 +1,5 @@
+=== 019_02_select_basics_01.json ===
+plan_kind = NAMESPACE
+operation = SetCatalogAndNamespace
+note      = Set namespace: .test_sql_db
+columns: <none>

@@ -1,0 +1,12 @@
+=== 008_00_setup_schema_08.json ===
+plan_kind = DDL
+operation = CreateDataSourceTableCommand
+target    = spark_catalog.default.employees
+note      = Schema-only definition; no data flow
+columns:
+  [ 0] emp_id :: integer | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 1] emp_name :: string | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 2] dept_id :: integer | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 3] salary :: decimal(12,2) | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 4] hire_date :: date | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 5] active :: boolean | LITERAL    | sources=[-] | expr=<schema definition>

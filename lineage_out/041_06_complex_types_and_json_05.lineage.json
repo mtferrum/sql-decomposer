@@ -1,0 +1,47 @@
+{
+  "file": "041_06_complex_types_and_json_05.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.events"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "event_id",
+        "data_type": "long",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.events.event_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "events",
+            "column": "event_id",
+            "fqn": "spark_catalog.default.events.event_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "parsed_payload",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "FROM_JSON(spark_catalog.default.events.payload)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "events",
+            "column": "payload",
+            "fqn": "spark_catalog.default.events.payload"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

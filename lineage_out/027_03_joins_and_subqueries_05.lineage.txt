@@ -1,0 +1,11 @@
+=== 027_03_joins_and_subqueries_05.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.employees
+columns:
+  [ 0] emp_id :: integer | IDENTITY   | sources=[spark_catalog.default.employees.emp_id] | expr=spark_catalog.default.employees.emp_id
+  [ 1] emp_name :: string | IDENTITY   | sources=[spark_catalog.default.employees.emp_name] | expr=spark_catalog.default.employees.emp_name
+  [ 2] dept_id :: integer | IDENTITY   | sources=[spark_catalog.default.employees.dept_id] | expr=spark_catalog.default.employees.dept_id
+  [ 3] salary :: decimal(12,2) | IDENTITY   | sources=[spark_catalog.default.employees.salary] | expr=spark_catalog.default.employees.salary
+  [ 4] hire_date :: date | IDENTITY   | sources=[spark_catalog.default.employees.hire_date] | expr=spark_catalog.default.employees.hire_date
+  [ 5] active :: boolean | IDENTITY   | sources=[spark_catalog.default.employees.active] | expr=spark_catalog.default.employees.active

@@ -1,0 +1,8 @@
+=== 014_01_seed_data_02.json ===
+plan_kind = DML
+operation = InsertIntoHadoopFsRelationCommand
+target    = spark_catalog.default.departments
+columns:
+  [ 0] dept_id :: integer | LITERAL    | sources=[-] | expr=CAST(col1 AS integer)
+  [ 1] dept_name :: string | LITERAL    | sources=[-] | expr=CAST(col2 AS string)
+  [ 2] region :: string | LITERAL    | sources=[-] | expr=CAST(col3 AS string)

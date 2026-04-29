@@ -1,0 +1,31 @@
+{
+  "file": "028_03_joins_and_subqueries_06.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Aggregate",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.employees"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "avg(salary)",
+        "data_type": "",
+        "transformation_type": "AGGREGATE",
+        "expression": "AVG(e2.salary)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "salary",
+            "fqn": "spark_catalog.default.employees.salary"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

@@ -1,0 +1,8 @@
+=== 021_02_select_basics_03.json ===
+plan_kind = QUERY
+operation = Project
+sources   = spark_catalog.default.employees
+columns:
+  [ 0] emp_name :: string | IDENTITY   | sources=[spark_catalog.default.employees.emp_name] | expr=spark_catalog.default.employees.emp_name
+  [ 1] dept_label :: string | EXPRESSION | sources=[spark_catalog.default.employees.dept_id] | expr=COALESCE(CAST(spark_catalog.default.employees.dept_id AS string), 'NO_DEPT')
+  [ 2] salary_band :: string | EXPRESSION | sources=[spark_catalog.default.employees.salary] | expr=CASE WHEN (spark_catalog.default.employees.salary >= CAST(CAST(13000 AS decimal(5,0)) AS decimal(12,2))) THEN 'A' WHEN (spark_catalog.default.employees.salary >= CAST(CAST(10000 AS decimal(5,0)) AS decimal(12,2))) THEN 'B' ELSE 'C' END

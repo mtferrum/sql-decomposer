@@ -1,0 +1,8 @@
+=== 017_01_seed_data_05.json ===
+plan_kind = DML
+operation = InsertIntoHadoopFsRelationCommand
+target    = spark_catalog.default.events
+columns:
+  [ 0] event_id :: long | LITERAL    | sources=[-] | expr=CAST(col1 AS long)
+  [ 1] payload :: string | LITERAL    | sources=[-] | expr=CAST(col2 AS string)
+  [ 2] event_date :: date | LITERAL    | sources=[-] | expr=CAST(col3 AS date)

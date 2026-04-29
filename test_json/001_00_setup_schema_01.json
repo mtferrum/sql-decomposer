@@ -1,0 +1,1 @@
+[{"class": "org.apache.spark.sql.catalyst.plans.logical.CreateNamespace", "num-children": 1, "name": 0, "ifNotExists": true, "properties": null}, {"class": "org.apache.spark.sql.catalyst.analysis.ResolvedNamespace", "num-children": 0, "catalog": null, "namespace": "[test_sql_db]"}]

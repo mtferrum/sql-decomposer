@@ -1,0 +1,6 @@
+=== 068_10_cleanup_08.json ===
+plan_kind = DDL
+operation = DropTable
+target    = 
+note      = No data flow
+columns: <none>

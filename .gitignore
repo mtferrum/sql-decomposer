@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+ENV/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Testing / coverage
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Local Spark / Derby
+derby.log
+spark-metastore/
+spark-warehouse/
+
+# Tooling / IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+.scala-build/
+.tmpbin/
+
+# Generated runs (optional local logs)
+run.log

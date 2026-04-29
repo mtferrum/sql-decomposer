@@ -1,0 +1,5 @@
+=== 056_09_ansi_and_error_cases_01.json ===
+plan_kind = NAMESPACE
+operation = SetCatalogAndNamespace
+note      = Set namespace: .test_sql_db
+columns: <none>

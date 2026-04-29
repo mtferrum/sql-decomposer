@@ -1,0 +1,63 @@
+{
+  "file": "021_02_select_basics_03.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Project",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.employees"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_name",
+        "data_type": "string",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.emp_name",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "emp_name",
+            "fqn": "spark_catalog.default.employees.emp_name"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "dept_label",
+        "data_type": "string",
+        "transformation_type": "EXPRESSION",
+        "expression": "COALESCE(CAST(spark_catalog.default.employees.dept_id AS string), 'NO_DEPT')",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "dept_id",
+            "fqn": "spark_catalog.default.employees.dept_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "salary_band",
+        "data_type": "string",
+        "transformation_type": "EXPRESSION",
+        "expression": "CASE WHEN (spark_catalog.default.employees.salary >= CAST(CAST(13000 AS decimal(5,0)) AS decimal(12,2))) THEN 'A' WHEN (spark_catalog.default.employees.salary >= CAST(CAST(10000 AS decimal(5,0)) AS decimal(12,2))) THEN 'B' ELSE 'C' END",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "salary",
+            "fqn": "spark_catalog.default.employees.salary"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

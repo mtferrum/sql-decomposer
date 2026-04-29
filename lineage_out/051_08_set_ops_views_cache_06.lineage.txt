@@ -1,0 +1,8 @@
+=== 051_08_set_ops_views_cache_06.json ===
+plan_kind = DDL
+operation = CreateViewCommand
+target    = v_sales_total
+sources   = spark_catalog.default.sales
+columns:
+  [ 0] emp_id :: integer | IDENTITY   | sources=[spark_catalog.default.sales.emp_id] | expr=spark_catalog.default.sales.emp_id
+  [ 1] total_amount ::  | AGGREGATE  | sources=[spark_catalog.default.sales.amount] | expr=SUM(spark_catalog.default.sales.amount)

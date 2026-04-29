@@ -1,0 +1,63 @@
+{
+  "file": "020_02_select_basics_02.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "GlobalLimit",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.employees"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_id",
+        "data_type": "integer",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.emp_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.employees.emp_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "emp_name",
+        "data_type": "string",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.emp_name",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "emp_name",
+            "fqn": "spark_catalog.default.employees.emp_name"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "salary",
+        "data_type": "decimal(12,2)",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.salary",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "salary",
+            "fqn": "spark_catalog.default.employees.salary"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

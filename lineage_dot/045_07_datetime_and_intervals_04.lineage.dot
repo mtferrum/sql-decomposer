@@ -1,0 +1,6 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#2563eb"><FONT COLOR="white"><B>EXPRESSION</B></FONT></TD><TD ALIGN="LEFT" PORT="plus_2h"><B>plus_2h</B> <FONT COLOR="#6b7280">::timestamp</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">CAST(+(TIMESTAMP &#x27;2024-01-01 10:00:00&#x27;, INTERVAL &#x27;720000000…</FONT></TD></TR><TR><TD BGCOLOR="#2563eb"><FONT COLOR="white"><B>EXPRESSION</B></FONT></TD><TD ALIGN="LEFT" PORT="minus_30m"><B>minus_30m</B> <FONT COLOR="#6b7280">::timestamp</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">CAST(-(+(TIMESTAMP &#x27;2024-01-01 10:00:00&#x27;, (-INTERVAL &#x27;18000…</FONT></TD></TR><TR><TD BGCOLOR="#2563eb"><FONT COLOR="white"><B>EXPRESSION</B></FONT></TD><TD ALIGN="LEFT" PORT="plus_7d"><B>plus_7d</B> <FONT COLOR="#6b7280">::</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">DATE_ADD(DATE &#x27;2024-01-01&#x27;, EXTRACT_DAYS(INTERVAL &#x27;60480000…</FONT></TD></TR></TABLE>>];
+}

@@ -1,0 +1,52 @@
+{
+  "file": "012_00_setup_schema_12.json",
+  "lineage": {
+    "plan_kind": "DDL",
+    "operation": "CreateDataSourceTableCommand",
+    "target_table": {
+      "catalog": "spark_catalog",
+      "database": "default",
+      "table": "nested_data",
+      "fqn": "spark_catalog.default.nested_data"
+    },
+    "source_tables": [],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "data_type": "integer",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 1,
+        "name": "tags",
+        "data_type": "{'type': 'array', 'elementType': 'string', 'containsNull': True}",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 2,
+        "name": "attrs",
+        "data_type": "{'type': 'map', 'keyType': 'string', 'valueType': 'string', 'valueContainsNull': True}",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 3,
+        "name": "profile",
+        "data_type": "{'type': 'struct', 'fields': [{'name': 'country', 'type': 'string', 'nullable': True, 'metadata': {}}, {'name': 'city', 'type': 'string', 'nullable': True, 'metadata': {}}, {'name': 'zip', 'type': 'string', 'nullable': True, 'metadata': {}}]}",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      }
+    ],
+    "ctes": {},
+    "notes": [
+      "Schema-only definition; no data flow"
+    ]
+  }
+}

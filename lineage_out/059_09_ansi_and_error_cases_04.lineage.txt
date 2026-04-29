@@ -1,0 +1,5 @@
+=== 059_09_ansi_and_error_cases_04.json ===
+plan_kind = QUERY
+operation = Project
+columns:
+  [ 0] should_fail_division ::  | EXPRESSION | sources=[-] | expr=(CAST(10 AS double) / CAST(0 AS double))

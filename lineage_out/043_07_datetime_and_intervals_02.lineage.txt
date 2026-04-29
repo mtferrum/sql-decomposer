@@ -1,0 +1,10 @@
+=== 043_07_datetime_and_intervals_02.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.employees
+columns:
+  [ 0] emp_id :: integer | IDENTITY   | sources=[spark_catalog.default.employees.emp_id] | expr=spark_catalog.default.employees.emp_id
+  [ 1] hire_date :: date | IDENTITY   | sources=[spark_catalog.default.employees.hire_date] | expr=spark_catalog.default.employees.hire_date
+  [ 2] plus_6_months ::  | EXPRESSION | sources=[spark_catalog.default.employees.hire_date] | expr=ADD_MONTHS(spark_catalog.default.employees.hire_date, 6)
+  [ 3] plus_10_days ::  | EXPRESSION | sources=[spark_catalog.default.employees.hire_date] | expr=DATE_ADD(spark_catalog.default.employees.hire_date, 10)
+  [ 4] months_worked ::  | EXPRESSION | sources=[spark_catalog.default.employees.hire_date] | expr=MONTHS_BETWEEN(CAST(CURRENT_DATE() AS timestamp), CAST(spark_catalog.default.employees.hire_date AS timestamp), TRUE)

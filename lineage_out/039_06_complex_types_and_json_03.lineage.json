@@ -1,0 +1,47 @@
+{
+  "file": "039_06_complex_types_and_json_03.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.nested_data"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "data_type": "integer",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.nested_data.id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "nested_data",
+            "column": "id",
+            "fqn": "spark_catalog.default.nested_data.id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "tag",
+        "data_type": "string",
+        "transformation_type": "GENERATOR",
+        "expression": "EXPLODE(spark_catalog.default.nested_data.tags).tag",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "nested_data",
+            "column": "tags",
+            "fqn": "spark_catalog.default.nested_data.tags"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

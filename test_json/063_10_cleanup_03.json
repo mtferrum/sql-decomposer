@@ -1,0 +1,1 @@
+[{"class": "org.apache.spark.sql.execution.command.DropTableCommand", "num-children": 0, "tableName": {"product-class": "org.apache.spark.sql.catalyst.TableIdentifier", "table": "v_sales_total", "database": "default", "catalog": "spark_catalog"}, "ifExists": true, "isView": true, "purge": false}]

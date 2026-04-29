@@ -1,0 +1,5 @@
+=== show_tables.json ===
+plan_kind = DDL
+operation = ShowTables
+note      = Catalog metadata operation; no data flow
+columns: <none>

@@ -1,0 +1,8 @@
+=== 020_02_select_basics_02.json ===
+plan_kind = QUERY
+operation = GlobalLimit
+sources   = spark_catalog.default.employees
+columns:
+  [ 0] emp_id :: integer | IDENTITY   | sources=[spark_catalog.default.employees.emp_id] | expr=spark_catalog.default.employees.emp_id
+  [ 1] emp_name :: string | IDENTITY   | sources=[spark_catalog.default.employees.emp_name] | expr=spark_catalog.default.employees.emp_name
+  [ 2] salary :: decimal(12,2) | IDENTITY   | sources=[spark_catalog.default.employees.salary] | expr=spark_catalog.default.employees.salary

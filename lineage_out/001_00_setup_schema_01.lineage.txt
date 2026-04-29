@@ -1,0 +1,4 @@
+=== 001_00_setup_schema_01.json ===
+plan_kind = NAMESPACE
+operation = CreateNamespace
+columns: <none>

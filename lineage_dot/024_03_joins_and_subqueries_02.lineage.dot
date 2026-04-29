@@ -1,0 +1,11 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "src_spark_catalog.default.employees" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD BGCOLOR="#1f2937"><FONT COLOR="white"><B>spark_catalog.default.employees</B></FONT></TD></TR><TR><TD ALIGN="LEFT" PORT="emp_name">emp_name</TD></TR><TR><TD ALIGN="LEFT" PORT="salary">salary</TD></TR></TABLE>>];
+  "src_spark_catalog.default.departments" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD BGCOLOR="#1f2937"><FONT COLOR="white"><B>spark_catalog.default.departments</B></FONT></TD></TR><TR><TD ALIGN="LEFT" PORT="dept_name">dept_name</TD></TR></TABLE>>];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="emp_name"><B>emp_name</B> <FONT COLOR="#6b7280">::string</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.employees.emp_name</FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="dept_name"><B>dept_name</B> <FONT COLOR="#6b7280">::string</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.departments.dept_name</FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="salary"><B>salary</B> <FONT COLOR="#6b7280">::decimal(12,2)</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.employees.salary</FONT></TD></TR></TABLE>>];
+  "src_spark_catalog.default.employees":emp_name:e -> "output":emp_name:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.departments":dept_name:e -> "output":dept_name:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.employees":salary:e -> "output":salary:w [color="#6b7280", penwidth=1.2];
+}

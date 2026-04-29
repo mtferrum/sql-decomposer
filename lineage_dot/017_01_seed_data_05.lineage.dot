@@ -1,0 +1,6 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#10b981"><FONT COLOR="white"><B>LITERAL</B></FONT></TD><TD ALIGN="LEFT" PORT="event_id"><B>event_id</B> <FONT COLOR="#6b7280">::long</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">CAST(col1 AS long)</FONT></TD></TR><TR><TD BGCOLOR="#10b981"><FONT COLOR="white"><B>LITERAL</B></FONT></TD><TD ALIGN="LEFT" PORT="payload"><B>payload</B> <FONT COLOR="#6b7280">::string</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">CAST(col2 AS string)</FONT></TD></TR><TR><TD BGCOLOR="#10b981"><FONT COLOR="white"><B>LITERAL</B></FONT></TD><TD ALIGN="LEFT" PORT="event_date"><B>event_date</B> <FONT COLOR="#6b7280">::date</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">CAST(col3 AS date)</FONT></TD></TR></TABLE>>];
+}

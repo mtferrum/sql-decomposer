@@ -1,0 +1,11 @@
+=== 035_05_window_functions_02.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.sales
+columns:
+  [ 0] emp_id :: integer | IDENTITY   | sources=[spark_catalog.default.sales.emp_id] | expr=spark_catalog.default.sales.emp_id
+  [ 1] sale_ts :: timestamp | IDENTITY   | sources=[spark_catalog.default.sales.sale_ts] | expr=spark_catalog.default.sales.sale_ts
+  [ 2] amount :: decimal(12,2) | IDENTITY   | sources=[spark_catalog.default.sales.amount] | expr=spark_catalog.default.sales.amount
+  [ 3] rn :: integer | WINDOW     | sources=[spark_catalog.default.sales.emp_id, spark_catalog.default.sales.sale_ts] | expr=ROW_NUMBER() OVER (PARTITION BY s.emp_id ORDER BY s.sale_ts ASC NULLS FIRST ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
+  [ 4] amount_rank :: integer | WINDOW     | sources=[spark_catalog.default.sales.amount, spark_catalog.default.sales.emp_id] | expr=RANK(s.amount) OVER (PARTITION BY s.emp_id ORDER BY s.amount DESC NULLS LAST ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
+  [ 5] running_amount :: decimal(22,2) | WINDOW     | sources=[spark_catalog.default.sales.amount, spark_catalog.default.sales.emp_id, spark_catalog.default.sales.sale_ts] | expr=SUM(s.amount) OVER (PARTITION BY s.emp_id ORDER BY s.sale_ts ASC NULLS FIRST ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)

@@ -1,0 +1,10 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "src_spark_catalog.default.employees" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD BGCOLOR="#1f2937"><FONT COLOR="white"><B>spark_catalog.default.employees</B></FONT></TD></TR><TR><TD ALIGN="LEFT" PORT="active">active</TD></TR><TR><TD ALIGN="LEFT" PORT="dept_id">dept_id</TD></TR><TR><TD ALIGN="LEFT" PORT="salary">salary</TD></TR></TABLE>>];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#dc2626"><FONT COLOR="white"><B>GROUPING</B></FONT></TD><TD ALIGN="LEFT" PORT="dept_id"><B>dept_id</B> <FONT COLOR="#6b7280">::integer</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.employees.dept_id | NULL</FONT></TD></TR><TR><TD BGCOLOR="#dc2626"><FONT COLOR="white"><B>GROUPING</B></FONT></TD><TD ALIGN="LEFT" PORT="active"><B>active</B> <FONT COLOR="#6b7280">::boolean</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.employees.active | NULL</FONT></TD></TR><TR><TD BGCOLOR="#f59e0b"><FONT COLOR="white"><B>AGGREGATE</B></FONT></TD><TD ALIGN="LEFT" PORT="cnt"><B>cnt</B> <FONT COLOR="#6b7280">::</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">COUNT(*)</FONT></TD></TR><TR><TD BGCOLOR="#f59e0b"><FONT COLOR="white"><B>AGGREGATE</B></FONT></TD><TD ALIGN="LEFT" PORT="total_salary"><B>total_salary</B> <FONT COLOR="#6b7280">::</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">SUM(spark_catalog.default.employees.salary)</FONT></TD></TR></TABLE>>];
+  "src_spark_catalog.default.employees":dept_id:e -> "output":dept_id:w [color="#dc2626", penwidth=1.2];
+  "src_spark_catalog.default.employees":active:e -> "output":active:w [color="#dc2626", penwidth=1.2];
+  "src_spark_catalog.default.employees":salary:e -> "output":total_salary:w [color="#f59e0b", penwidth=1.2];
+}

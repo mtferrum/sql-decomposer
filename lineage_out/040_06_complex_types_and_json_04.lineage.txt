@@ -1,0 +1,9 @@
+=== 040_06_complex_types_and_json_04.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.events
+columns:
+  [ 0] event_id :: long | IDENTITY   | sources=[spark_catalog.default.events.event_id] | expr=spark_catalog.default.events.event_id
+  [ 1] event_type ::  | EXPRESSION | sources=[spark_catalog.default.events.payload] | expr=GET_JSON_OBJECT(spark_catalog.default.events.payload, '$.type')
+  [ 2] source ::  | EXPRESSION | sources=[spark_catalog.default.events.payload] | expr=GET_JSON_OBJECT(spark_catalog.default.events.payload, '$.source')
+  [ 3] value_int :: integer | EXPRESSION | sources=[spark_catalog.default.events.payload] | expr=CAST(GET_JSON_OBJECT(spark_catalog.default.events.payload, '$.value') AS integer)

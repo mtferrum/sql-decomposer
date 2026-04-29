@@ -1,0 +1,10 @@
+=== 016_01_seed_data_04.json ===
+plan_kind = DML
+operation = InsertIntoHadoopFsRelationCommand
+target    = spark_catalog.default.sales
+columns:
+  [ 0] sale_id :: long | LITERAL    | sources=[-] | expr=CAST(col1 AS long)
+  [ 1] emp_id :: integer | LITERAL    | sources=[-] | expr=CAST(col2 AS integer)
+  [ 2] sale_ts :: timestamp | LITERAL    | sources=[-] | expr=CAST(col3 AS timestamp)
+  [ 3] amount :: decimal(12,2) | LITERAL    | sources=[-] | expr=CAST(col4 AS decimal(12,2))
+  [ 4] channel :: string | LITERAL    | sources=[-] | expr=CAST(col5 AS string)

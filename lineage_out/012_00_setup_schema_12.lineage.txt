@@ -1,0 +1,10 @@
+=== 012_00_setup_schema_12.json ===
+plan_kind = DDL
+operation = CreateDataSourceTableCommand
+target    = spark_catalog.default.nested_data
+note      = Schema-only definition; no data flow
+columns:
+  [ 0] id :: integer | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 1] tags :: {'type': 'array', 'elementType': 'string', 'containsNull': True} | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 2] attrs :: {'type': 'map', 'keyType': 'string', 'valueType': 'string', 'valueContainsNull': True} | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 3] profile :: {'type': 'struct', 'fields': [{'name': 'country', 'type': 'string', 'nullable': True, 'metadata': {}}, {'name': 'city', 'type': 'string', 'nullable': True, 'metadata': {}}, {'name': 'zip', 'type': 'string', 'nullable': True, 'metadata': {}}]} | LITERAL    | sources=[-] | expr=<schema definition>

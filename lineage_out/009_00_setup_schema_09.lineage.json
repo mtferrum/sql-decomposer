@@ -1,0 +1,44 @@
+{
+  "file": "009_00_setup_schema_09.json",
+  "lineage": {
+    "plan_kind": "DDL",
+    "operation": "CreateDataSourceTableCommand",
+    "target_table": {
+      "catalog": "spark_catalog",
+      "database": "default",
+      "table": "departments",
+      "fqn": "spark_catalog.default.departments"
+    },
+    "source_tables": [],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "dept_id",
+        "data_type": "integer",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 1,
+        "name": "dept_name",
+        "data_type": "string",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      },
+      {
+        "ordinal": 2,
+        "name": "region",
+        "data_type": "string",
+        "transformation_type": "LITERAL",
+        "expression": "<schema definition>",
+        "sources": []
+      }
+    ],
+    "ctes": {},
+    "notes": [
+      "Schema-only definition; no data flow"
+    ]
+  }
+}

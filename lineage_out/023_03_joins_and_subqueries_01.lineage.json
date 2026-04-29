@@ -1,0 +1,14 @@
+{
+  "file": "023_03_joins_and_subqueries_01.json",
+  "lineage": {
+    "plan_kind": "NAMESPACE",
+    "operation": "SetCatalogAndNamespace",
+    "target_table": null,
+    "source_tables": [],
+    "columns": [],
+    "ctes": {},
+    "notes": [
+      "Set namespace: .test_sql_db"
+    ]
+  }
+}

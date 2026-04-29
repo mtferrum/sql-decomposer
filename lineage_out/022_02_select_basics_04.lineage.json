@@ -1,0 +1,31 @@
+{
+  "file": "022_02_select_basics_04.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.sales"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "channel",
+        "data_type": "string",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.channel",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "channel",
+            "fqn": "spark_catalog.default.sales.channel"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

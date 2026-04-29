@@ -1,0 +1,37 @@
+{
+  "file": "045_07_datetime_and_intervals_04.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Project",
+    "target_table": null,
+    "source_tables": [],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "plus_2h",
+        "data_type": "timestamp",
+        "transformation_type": "EXPRESSION",
+        "expression": "CAST(+(TIMESTAMP '2024-01-01 10:00:00', INTERVAL '7200000000') AS timestamp)",
+        "sources": []
+      },
+      {
+        "ordinal": 1,
+        "name": "minus_30m",
+        "data_type": "timestamp",
+        "transformation_type": "EXPRESSION",
+        "expression": "CAST(-(+(TIMESTAMP '2024-01-01 10:00:00', (-INTERVAL '1800000000'))) AS timestamp)",
+        "sources": []
+      },
+      {
+        "ordinal": 2,
+        "name": "plus_7d",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "DATE_ADD(DATE '2024-01-01', EXTRACT_DAYS(INTERVAL '604800000000'))",
+        "sources": []
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

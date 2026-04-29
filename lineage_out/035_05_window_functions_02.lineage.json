@@ -1,0 +1,139 @@
+{
+  "file": "035_05_window_functions_02.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.sales"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_id",
+        "data_type": "integer",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.emp_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.sales.emp_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "sale_ts",
+        "data_type": "timestamp",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.sale_ts",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "amount",
+        "data_type": "decimal(12,2)",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.sales.amount",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "amount",
+            "fqn": "spark_catalog.default.sales.amount"
+          }
+        ]
+      },
+      {
+        "ordinal": 3,
+        "name": "rn",
+        "data_type": "integer",
+        "transformation_type": "WINDOW",
+        "expression": "ROW_NUMBER() OVER (PARTITION BY s.emp_id ORDER BY s.sale_ts ASC NULLS FIRST ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.sales.emp_id"
+          },
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      },
+      {
+        "ordinal": 4,
+        "name": "amount_rank",
+        "data_type": "integer",
+        "transformation_type": "WINDOW",
+        "expression": "RANK(s.amount) OVER (PARTITION BY s.emp_id ORDER BY s.amount DESC NULLS LAST ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "amount",
+            "fqn": "spark_catalog.default.sales.amount"
+          },
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.sales.emp_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 5,
+        "name": "running_amount",
+        "data_type": "decimal(22,2)",
+        "transformation_type": "WINDOW",
+        "expression": "SUM(s.amount) OVER (PARTITION BY s.emp_id ORDER BY s.sale_ts ASC NULLS FIRST ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "amount",
+            "fqn": "spark_catalog.default.sales.amount"
+          },
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "emp_id",
+            "fqn": "spark_catalog.default.sales.emp_id"
+          },
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "sales",
+            "column": "sale_ts",
+            "fqn": "spark_catalog.default.sales.sale_ts"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

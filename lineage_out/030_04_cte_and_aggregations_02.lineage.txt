@@ -1,0 +1,21 @@
+=== 030_04_cte_and_aggregations_02.json ===
+plan_kind = QUERY
+operation = WithCTE
+sources   = spark_catalog.default.employees
+ctes:
+  active_emp:
+    [ 0] emp_id :: integer | IDENTITY   | sources=[spark_catalog.default.employees.emp_id] | expr=spark_catalog.default.employees.emp_id
+    [ 1] emp_name :: string | IDENTITY   | sources=[spark_catalog.default.employees.emp_name] | expr=spark_catalog.default.employees.emp_name
+    [ 2] dept_id :: integer | IDENTITY   | sources=[spark_catalog.default.employees.dept_id] | expr=spark_catalog.default.employees.dept_id
+    [ 3] salary :: decimal(12,2) | IDENTITY   | sources=[spark_catalog.default.employees.salary] | expr=spark_catalog.default.employees.salary
+    [ 4] hire_date :: date | IDENTITY   | sources=[spark_catalog.default.employees.hire_date] | expr=spark_catalog.default.employees.hire_date
+    [ 5] active :: boolean | IDENTITY   | sources=[spark_catalog.default.employees.active] | expr=spark_catalog.default.employees.active
+  dept_salary:
+    [ 0] dept_id :: integer | IDENTITY   | sources=[spark_catalog.default.employees.dept_id] | expr=spark_catalog.default.employees.dept_id
+    [ 1] total_salary ::  | AGGREGATE  | sources=[spark_catalog.default.employees.salary] | expr=SUM(active_emp.salary)
+    [ 2] avg_salary ::  | AGGREGATE  | sources=[spark_catalog.default.employees.salary] | expr=AVG(active_emp.salary)
+columns:
+  [ 0] emp_name :: string | IDENTITY   | sources=[spark_catalog.default.employees.emp_name] | expr=spark_catalog.default.employees.emp_name
+  [ 1] dept_id :: integer | IDENTITY   | sources=[spark_catalog.default.employees.dept_id] | expr=spark_catalog.default.employees.dept_id
+  [ 2] total_salary :: decimal(22,2) | AGGREGATE  | sources=[spark_catalog.default.employees.salary] | expr=SUM(active_emp.salary)
+  [ 3] avg_salary :: decimal(16,6) | AGGREGATE  | sources=[spark_catalog.default.employees.salary] | expr=AVG(active_emp.salary)

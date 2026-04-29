@@ -1,0 +1,1 @@
+[{"class": "org.apache.spark.sql.catalyst.plans.logical.DropTable", "num-children": 1, "child": 0, "ifExists": true, "purge": false}, {"class": "org.apache.spark.sql.catalyst.analysis.ResolvedIdentifier", "num-children": 0, "catalog": null, "identifier": null}]

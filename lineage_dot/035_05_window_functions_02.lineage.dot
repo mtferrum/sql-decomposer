@@ -1,0 +1,17 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "src_spark_catalog.default.sales" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD BGCOLOR="#1f2937"><FONT COLOR="white"><B>spark_catalog.default.sales</B></FONT></TD></TR><TR><TD ALIGN="LEFT" PORT="amount">amount</TD></TR><TR><TD ALIGN="LEFT" PORT="emp_id">emp_id</TD></TR><TR><TD ALIGN="LEFT" PORT="sale_ts">sale_ts</TD></TR></TABLE>>];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="emp_id"><B>emp_id</B> <FONT COLOR="#6b7280">::integer</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.sales.emp_id</FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="sale_ts"><B>sale_ts</B> <FONT COLOR="#6b7280">::timestamp</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.sales.sale_ts</FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="amount"><B>amount</B> <FONT COLOR="#6b7280">::decimal(12,2)</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.sales.amount</FONT></TD></TR><TR><TD BGCOLOR="#7c3aed"><FONT COLOR="white"><B>WINDOW</B></FONT></TD><TD ALIGN="LEFT" PORT="rn"><B>rn</B> <FONT COLOR="#6b7280">::integer</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">ROW_NUMBER() OVER (PARTITION BY s.emp_id ORDER BY s.sale_ts…</FONT></TD></TR><TR><TD BGCOLOR="#7c3aed"><FONT COLOR="white"><B>WINDOW</B></FONT></TD><TD ALIGN="LEFT" PORT="amount_rank"><B>amount_rank</B> <FONT COLOR="#6b7280">::integer</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">RANK(s.amount) OVER (PARTITION BY s.emp_id ORDER BY s.amoun…</FONT></TD></TR><TR><TD BGCOLOR="#7c3aed"><FONT COLOR="white"><B>WINDOW</B></FONT></TD><TD ALIGN="LEFT" PORT="running_amount"><B>running_amount</B> <FONT COLOR="#6b7280">::decimal(22,2)</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">SUM(s.amount) OVER (PARTITION BY s.emp_id ORDER BY s.sale_t…</FONT></TD></TR></TABLE>>];
+  "src_spark_catalog.default.sales":emp_id:e -> "output":emp_id:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.sales":sale_ts:e -> "output":sale_ts:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.sales":amount:e -> "output":amount:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.sales":sale_ts:e -> "output":rn:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":emp_id:e -> "output":rn:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":amount:e -> "output":amount_rank:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":emp_id:e -> "output":amount_rank:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":amount:e -> "output":running_amount:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":emp_id:e -> "output":running_amount:w [color="#7c3aed", penwidth=1.2];
+  "src_spark_catalog.default.sales":sale_ts:e -> "output":running_amount:w [color="#7c3aed", penwidth=1.2];
+}

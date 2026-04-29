@@ -1,0 +1,12 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "src_spark_catalog.default.nested_data" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD BGCOLOR="#1f2937"><FONT COLOR="white"><B>spark_catalog.default.nested_data</B></FONT></TD></TR><TR><TD ALIGN="LEFT" PORT="attrs">attrs</TD></TR><TR><TD ALIGN="LEFT" PORT="id">id</TD></TR><TR><TD ALIGN="LEFT" PORT="profile">profile</TD></TR><TR><TD ALIGN="LEFT" PORT="tags">tags</TD></TR></TABLE>>];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="id"><B>id</B> <FONT COLOR="#6b7280">::integer</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.nested_data.id</FONT></TD></TR><TR><TD BGCOLOR="#2563eb"><FONT COLOR="white"><B>EXPRESSION</B></FONT></TD><TD ALIGN="LEFT" PORT="first_tag"><B>first_tag</B> <FONT COLOR="#6b7280">::</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.nested_data.tags[0]</FONT></TD></TR><TR><TD BGCOLOR="#2563eb"><FONT COLOR="white"><B>EXPRESSION</B></FONT></TD><TD ALIGN="LEFT" PORT="tier"><B>tier</B> <FONT COLOR="#6b7280">::</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.nested_data.attrs[&#x27;tier&#x27;]</FONT></TD></TR><TR><TD BGCOLOR="#2563eb"><FONT COLOR="white"><B>EXPRESSION</B></FONT></TD><TD ALIGN="LEFT" PORT="country"><B>country</B> <FONT COLOR="#6b7280">::</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.nested_data.profile.country</FONT></TD></TR><TR><TD BGCOLOR="#2563eb"><FONT COLOR="white"><B>EXPRESSION</B></FONT></TD><TD ALIGN="LEFT" PORT="city"><B>city</B> <FONT COLOR="#6b7280">::</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.nested_data.profile.city</FONT></TD></TR></TABLE>>];
+  "src_spark_catalog.default.nested_data":id:e -> "output":id:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.nested_data":tags:e -> "output":first_tag:w [color="#2563eb", penwidth=1.2];
+  "src_spark_catalog.default.nested_data":attrs:e -> "output":tier:w [color="#2563eb", penwidth=1.2];
+  "src_spark_catalog.default.nested_data":profile:e -> "output":country:w [color="#2563eb", penwidth=1.2];
+  "src_spark_catalog.default.nested_data":profile:e -> "output":city:w [color="#2563eb", penwidth=1.2];
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1096 234" width="1096" height="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+<rect x="0" y="0" width="1096" height="234" fill="#ffffff"/>
+<defs>
+<marker id="arr-IDENTITY" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker>
+<marker id="arr-EXPRESSION" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+<marker id="arr-AGGREGATE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker>
+<marker id="arr-WINDOW" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker>
+<marker id="arr-LITERAL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#10b981"/></marker>
+<marker id="arr-GROUPING" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker>
+<marker id="arr-GENERATOR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#14b8a6"/></marker>
+<marker id="arr-OUTER_REFERENCE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+</defs>
+<g><text x="28" y="46" font-size="18" font-weight="600" fill="#111827">Column lineage  ·  DDL  ·  DropTable</text><text x="28" y="66" font-size="11" fill="#374151">sources: —    columns: 0</text></g>
+<g font-size="11" fill="#374151"><rect x="28.0" y="69.0" width="12" height="12" rx="2" fill="#6b7280"/><text x="46.0" y="78.0">IDENTITY</text><rect x="118.4" y="69.0" width="12" height="12" rx="2" fill="#2563eb"/><text x="136.4" y="78.0">EXPRESSION</text><rect x="222.4" y="69.0" width="12" height="12" rx="2" fill="#f59e0b"/><text x="240.4" y="78.0">AGGREGATE</text><rect x="319.6" y="69.0" width="12" height="12" rx="2" fill="#7c3aed"/><text x="337.6" y="78.0">WINDOW</text><rect x="396.4" y="69.0" width="12" height="12" rx="2" fill="#10b981"/><text x="414.4" y="78.0">LITERAL</text><rect x="480.0" y="69.0" width="12" height="12" rx="2" fill="#dc2626"/><text x="498.0" y="78.0">GROUPING</text><rect x="570.4" y="69.0" width="12" height="12" rx="2" fill="#14b8a6"/><text x="588.4" y="78.0">GENERATOR</text><rect x="667.6" y="69.0" width="12" height="12" rx="2" fill="#94a3b8"/><text x="685.6" y="78.0">OUTER_REFERENCE</text></g>
+<g class="edges">
+
+</g>
+<rect x="528" y="116" width="540" height="72" rx="6" fill="#fafafa" stroke="#cbd5e1" stroke-width="1"/><rect x="528" y="116" width="540" height="30" rx="6" fill="#1f2937"/><rect x="528" y="140" width="540" height="6" fill="#1f2937"/><text x="540" y="135" fill="#f9fafb" font-size="12" font-weight="600">Output</text><text x="1056" y="135" text-anchor="end" fill="#cbd5e1" font-size="11">DDL :: DropTable</text>
+</svg>

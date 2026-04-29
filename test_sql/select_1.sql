@@ -1,0 +1,1 @@
+select 1 as z1, select 2 as z2;

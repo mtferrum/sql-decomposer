@@ -1,0 +1,95 @@
+{
+  "file": "038_06_complex_types_and_json_02.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "Sort",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.nested_data"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "data_type": "integer",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.nested_data.id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "nested_data",
+            "column": "id",
+            "fqn": "spark_catalog.default.nested_data.id"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "first_tag",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "spark_catalog.default.nested_data.tags[0]",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "nested_data",
+            "column": "tags",
+            "fqn": "spark_catalog.default.nested_data.tags"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "tier",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "spark_catalog.default.nested_data.attrs['tier']",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "nested_data",
+            "column": "attrs",
+            "fqn": "spark_catalog.default.nested_data.attrs"
+          }
+        ]
+      },
+      {
+        "ordinal": 3,
+        "name": "country",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "spark_catalog.default.nested_data.profile.country",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "nested_data",
+            "column": "profile",
+            "fqn": "spark_catalog.default.nested_data.profile"
+          }
+        ]
+      },
+      {
+        "ordinal": 4,
+        "name": "city",
+        "data_type": "",
+        "transformation_type": "EXPRESSION",
+        "expression": "spark_catalog.default.nested_data.profile.city",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "nested_data",
+            "column": "profile",
+            "fqn": "spark_catalog.default.nested_data.profile"
+          }
+        ]
+      }
+    ],
+    "ctes": {},
+    "notes": []
+  }
+}

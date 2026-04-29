@@ -1,0 +1,19 @@
+{
+  "file": "063_10_cleanup_03.json",
+  "lineage": {
+    "plan_kind": "DDL",
+    "operation": "DropTableCommand",
+    "target_table": {
+      "catalog": "spark_catalog",
+      "database": "default",
+      "table": "v_sales_total",
+      "fqn": "spark_catalog.default.v_sales_total"
+    },
+    "source_tables": [],
+    "columns": [],
+    "ctes": {},
+    "notes": [
+      "No data flow"
+    ]
+  }
+}

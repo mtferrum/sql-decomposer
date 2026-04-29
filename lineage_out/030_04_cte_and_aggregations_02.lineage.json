@@ -1,0 +1,228 @@
+{
+  "file": "030_04_cte_and_aggregations_02.json",
+  "lineage": {
+    "plan_kind": "QUERY",
+    "operation": "WithCTE",
+    "target_table": null,
+    "source_tables": [
+      "spark_catalog.default.employees"
+    ],
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "emp_name",
+        "data_type": "string",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.emp_name",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "emp_name",
+            "fqn": "spark_catalog.default.employees.emp_name"
+          }
+        ]
+      },
+      {
+        "ordinal": 1,
+        "name": "dept_id",
+        "data_type": "integer",
+        "transformation_type": "IDENTITY",
+        "expression": "spark_catalog.default.employees.dept_id",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "dept_id",
+            "fqn": "spark_catalog.default.employees.dept_id"
+          }
+        ]
+      },
+      {
+        "ordinal": 2,
+        "name": "total_salary",
+        "data_type": "decimal(22,2)",
+        "transformation_type": "AGGREGATE",
+        "expression": "SUM(active_emp.salary)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "salary",
+            "fqn": "spark_catalog.default.employees.salary"
+          }
+        ]
+      },
+      {
+        "ordinal": 3,
+        "name": "avg_salary",
+        "data_type": "decimal(16,6)",
+        "transformation_type": "AGGREGATE",
+        "expression": "AVG(active_emp.salary)",
+        "sources": [
+          {
+            "catalog": "spark_catalog",
+            "database": "default",
+            "table": "employees",
+            "column": "salary",
+            "fqn": "spark_catalog.default.employees.salary"
+          }
+        ]
+      }
+    ],
+    "ctes": {
+      "active_emp": [
+        {
+          "ordinal": 0,
+          "name": "emp_id",
+          "data_type": "integer",
+          "transformation_type": "IDENTITY",
+          "expression": "spark_catalog.default.employees.emp_id",
+          "sources": [
+            {
+              "catalog": "spark_catalog",
+              "database": "default",
+              "table": "employees",
+              "column": "emp_id",
+              "fqn": "spark_catalog.default.employees.emp_id"
+            }
+          ]
+        },
+        {
+          "ordinal": 1,
+          "name": "emp_name",
+          "data_type": "string",
+          "transformation_type": "IDENTITY",
+          "expression": "spark_catalog.default.employees.emp_name",
+          "sources": [
+            {
+              "catalog": "spark_catalog",
+              "database": "default",
+              "table": "employees",
+              "column": "emp_name",
+              "fqn": "spark_catalog.default.employees.emp_name"
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "name": "dept_id",
+          "data_type": "integer",
+          "transformation_type": "IDENTITY",
+          "expression": "spark_catalog.default.employees.dept_id",
+          "sources": [
+            {
+              "catalog": "spark_catalog",
+              "database": "default",
+              "table": "employees",
+              "column": "dept_id",
+              "fqn": "spark_catalog.default.employees.dept_id"
+            }
+          ]
+        },
+        {
+          "ordinal": 3,
+          "name": "salary",
+          "data_type": "decimal(12,2)",
+          "transformation_type": "IDENTITY",
+          "expression": "spark_catalog.default.employees.salary",
+          "sources": [
+            {
+              "catalog": "spark_catalog",
+              "database": "default",
+              "table": "employees",
+              "column": "salary",
+              "fqn": "spark_catalog.default.employees.salary"
+            }
+          ]
+        },
+        {
+          "ordinal": 4,
+          "name": "hire_date",
+          "data_type": "date",
+          "transformation_type": "IDENTITY",
+          "expression": "spark_catalog.default.employees.hire_date",
+          "sources": [
+            {
+              "catalog": "spark_catalog",
+              "database": "default",
+              "table": "employees",
+              "column": "hire_date",
+              "fqn": "spark_catalog.default.employees.hire_date"
+            }
+          ]
+        },
+        {
+          "ordinal": 5,
+          "name": "active",
+          "data_type": "boolean",
+          "transformation_type": "IDENTITY",
+          "expression": "spark_catalog.default.employees.active",
+          "sources": [
+            {
+              "catalog": "spark_catalog",
+              "database": "default",
+              "table": "employees",
+              "column": "active",
+              "fqn": "spark_catalog.default.employees.active"
+            }
+          ]
+        }
+      ],
+      "dept_salary": [
+        {
+          "ordinal": 0,
+          "name": "dept_id",
+          "data_type": "integer",
+          "transformation_type": "IDENTITY",
+          "expression": "spark_catalog.default.employees.dept_id",
+          "sources": [
+            {
+              "catalog": "spark_catalog",
+              "database": "default",
+              "table": "employees",
+              "column": "dept_id",
+              "fqn": "spark_catalog.default.employees.dept_id"
+            }
+          ]
+        },
+        {
+          "ordinal": 1,
+          "name": "total_salary",
+          "data_type": "",
+          "transformation_type": "AGGREGATE",
+          "expression": "SUM(active_emp.salary)",
+          "sources": [
+            {
+              "catalog": "spark_catalog",
+              "database": "default",
+              "table": "employees",
+              "column": "salary",
+              "fqn": "spark_catalog.default.employees.salary"
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "name": "avg_salary",
+          "data_type": "",
+          "transformation_type": "AGGREGATE",
+          "expression": "AVG(active_emp.salary)",
+          "sources": [
+            {
+              "catalog": "spark_catalog",
+              "database": "default",
+              "table": "employees",
+              "column": "salary",
+              "fqn": "spark_catalog.default.employees.salary"
+            }
+          ]
+        }
+      ]
+    },
+    "notes": []
+  }
+}

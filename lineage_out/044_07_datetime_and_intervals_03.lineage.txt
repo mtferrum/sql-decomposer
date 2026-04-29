@@ -1,0 +1,12 @@
+=== 044_07_datetime_and_intervals_03.json ===
+plan_kind = QUERY
+operation = Sort
+sources   = spark_catalog.default.sales
+columns:
+  [ 0] sale_id :: long | IDENTITY   | sources=[spark_catalog.default.sales.sale_id] | expr=spark_catalog.default.sales.sale_id
+  [ 1] sale_ts :: timestamp | IDENTITY   | sources=[spark_catalog.default.sales.sale_ts] | expr=spark_catalog.default.sales.sale_ts
+  [ 2] sale_day ::  | EXPRESSION | sources=[spark_catalog.default.sales.sale_ts] | expr=DATE_TRUNC('DAY', spark_catalog.default.sales.sale_ts)
+  [ 3] sale_date ::  | EXPRESSION | sources=[spark_catalog.default.sales.sale_ts] | expr=TO_DATE(spark_catalog.default.sales.sale_ts)
+  [ 4] y ::  | EXPRESSION | sources=[spark_catalog.default.sales.sale_ts] | expr=YEAR(CAST(spark_catalog.default.sales.sale_ts AS date))
+  [ 5] m ::  | EXPRESSION | sources=[spark_catalog.default.sales.sale_ts] | expr=MONTH(CAST(spark_catalog.default.sales.sale_ts AS date))
+  [ 6] d ::  | EXPRESSION | sources=[spark_catalog.default.sales.sale_ts] | expr=DAY(CAST(spark_catalog.default.sales.sale_ts AS date))

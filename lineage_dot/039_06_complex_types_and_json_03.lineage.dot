@@ -1,0 +1,9 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "src_spark_catalog.default.nested_data" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD BGCOLOR="#1f2937"><FONT COLOR="white"><B>spark_catalog.default.nested_data</B></FONT></TD></TR><TR><TD ALIGN="LEFT" PORT="id">id</TD></TR><TR><TD ALIGN="LEFT" PORT="tags">tags</TD></TR></TABLE>>];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="id"><B>id</B> <FONT COLOR="#6b7280">::integer</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.nested_data.id</FONT></TD></TR><TR><TD BGCOLOR="#14b8a6"><FONT COLOR="white"><B>GENERATOR</B></FONT></TD><TD ALIGN="LEFT" PORT="tag"><B>tag</B> <FONT COLOR="#6b7280">::string</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">EXPLODE(spark_catalog.default.nested_data.tags).tag</FONT></TD></TR></TABLE>>];
+  "src_spark_catalog.default.nested_data":id:e -> "output":id:w [color="#6b7280", penwidth=1.2];
+  "src_spark_catalog.default.nested_data":tags:e -> "output":tag:w [color="#14b8a6", penwidth=1.2];
+}

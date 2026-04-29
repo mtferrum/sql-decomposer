@@ -1,0 +1,9 @@
+=== 009_00_setup_schema_09.json ===
+plan_kind = DDL
+operation = CreateDataSourceTableCommand
+target    = spark_catalog.default.departments
+note      = Schema-only definition; no data flow
+columns:
+  [ 0] dept_id :: integer | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 1] dept_name :: string | LITERAL    | sources=[-] | expr=<schema definition>
+  [ 2] region :: string | LITERAL    | sources=[-] | expr=<schema definition>

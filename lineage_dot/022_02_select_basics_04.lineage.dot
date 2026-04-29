@@ -1,0 +1,8 @@
+digraph lineage {
+  rankdir=LR;
+  node [shape=plaintext, fontname="Helvetica"];
+  edge [color="#94a3b8", penwidth=1.2];
+  "src_spark_catalog.default.sales" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD BGCOLOR="#1f2937"><FONT COLOR="white"><B>spark_catalog.default.sales</B></FONT></TD></TR><TR><TD ALIGN="LEFT" PORT="channel">channel</TD></TR></TABLE>>];
+  "output" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="white"><TR><TD COLSPAN="3" BGCOLOR="#1f2937"><FONT COLOR="white"><B>Output</B></FONT></TD></TR><TR><TD BGCOLOR="#6b7280"><FONT COLOR="white"><B>IDENTITY</B></FONT></TD><TD ALIGN="LEFT" PORT="channel"><B>channel</B> <FONT COLOR="#6b7280">::string</FONT></TD><TD ALIGN="LEFT"><FONT FACE="monospace">spark_catalog.default.sales.channel</FONT></TD></TR></TABLE>>];
+  "src_spark_catalog.default.sales":channel:e -> "output":channel:w [color="#6b7280", penwidth=1.2];
+}

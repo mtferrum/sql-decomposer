@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "catalyst-column-lineage"
-version = "0.1.0"
+version = "0.1.1"
 description = "Column-level data lineage and SVG/DOT/HTML visualisation from Apache Spark Catalyst LogicalPlan JSON dumps."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -56,10 +56,12 @@ dev = [
 ]
 
 [project.urls]
-Homepage      = "https://pypi.org/project/catalyst-column-lineage/"
-Documentation = "https://pypi.org/project/catalyst-column-lineage/"
-Source        = "https://pypi.org/project/catalyst-column-lineage/"
-Issues        = "https://pypi.org/project/catalyst-column-lineage/"
+Homepage      = "https://github.com/mtferrum/sql-decomposer/tree/main/packages/catalyst-column-lineage"
+Repository    = "https://github.com/mtferrum/sql-decomposer"
+Documentation = "https://github.com/mtferrum/sql-decomposer/blob/main/packages/catalyst-column-lineage/README.md"
+Source        = "https://github.com/mtferrum/sql-decomposer/tree/main/packages/catalyst-column-lineage"
+Issues        = "https://github.com/mtferrum/sql-decomposer/issues"
+Changelog     = "https://github.com/mtferrum/sql-decomposer/releases"
 
 [project.scripts]
 catalyst-column-lineage = "spark_lineage.__main__:main"

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spark-plan-to-sql"
-version = "0.1.0"
+version = "0.1.1"
 description = "Convert Apache Spark Catalyst LogicalPlan JSON back into a logically equivalent SQL statement."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -35,8 +35,11 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://pypi.org/project/spark-plan-to-sql/"
-Repository = "https://github.com/mtferrum/sql-decomposer"
+Homepage     = "https://github.com/mtferrum/sql-decomposer"
+Repository   = "https://github.com/mtferrum/sql-decomposer"
+Issues       = "https://github.com/mtferrum/sql-decomposer/issues"
+Changelog    = "https://github.com/mtferrum/sql-decomposer/releases"
+Documentation = "https://github.com/mtferrum/sql-decomposer/blob/main/README.md"
 
 [project.scripts]
 spark-plan-to-sql = "spark_plan_to_sql.cli:main"

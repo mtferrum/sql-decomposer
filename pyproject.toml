@@ -36,6 +36,7 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://pypi.org/project/spark-plan-to-sql/"
+Repository = "https://github.com/mtferrum/sql-decomposer"
 
 [project.scripts]
 spark-plan-to-sql = "spark_plan_to_sql.cli:main"
